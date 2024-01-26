@@ -3,11 +3,25 @@
 #include <vector>
 #include <algorithm>
 #include <random>
+#include <iostream>
 
 Player::Player(std::string name) :
     _name{ name } {
 };
 
+bool Player::play(Player& p1, Player& p2) {
+    std::cout << "Joueur 1 : " << p1[_round] << std::endl;
+    std::cout << "Joueur 2 : " << p2[_round] << std::endl;
+
+    if (p1[_round] < p2[_round]) {
+        p2._score++;
+    } else if (p2[_round] < p1[_round]) {
+        p1._score++;
+    }
+    _round++;
+
+    return _round >= p1._cards.size();
+}
 void Player::deal_all_cards(Player& p1, Player& p2) {
     std::vector<Card> all_cards;
     for (unsigned int value = 7; value < 15; value++) {
