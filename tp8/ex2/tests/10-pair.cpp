@@ -3,8 +3,7 @@
 
 #include <catch2/catch_test_macros.hpp>
 
-TEST_CASE("Il existe une classe StringInstancePair avec deux getters")
-{
+TEST_CASE("Il existe une classe StringInstancePair avec deux getters") {
     StringInstancePair p { "Test" };
 
     REQUIRE(1 == InstanceCounter::constructions());
