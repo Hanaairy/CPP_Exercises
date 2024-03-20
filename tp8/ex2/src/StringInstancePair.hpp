@@ -12,6 +12,8 @@ class StringInstancePair
         _ins(std::make_unique<InstanceCounter>()) {
     }
 
+    StringInstancePair(StringInstancePair&& other) = default;
+    
     StringInstancePair(const StringInstancePair& other) :
         _str{ other._str },
         _ins(std::make_unique<InstanceCounter>(other.get_instance_counter())) {
