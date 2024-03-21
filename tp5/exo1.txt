@@ -1,0 +1,16 @@
+a. 
+
+4 -> rvalue
+4 + i -> rvalue
+i -> rvalue
+i = 4 -> i est une lvalue et 4 est une rvalue
+i == 4 -> i lvalue et 4 rvalue
+
+b. 
+
+vec[5] -> lvalue
+vec -> lvalue
+vec.pop_back() -> aucun des deux car renvoie void
+std::vector { 'a', 'b', 'c' } -> rvalue
+vec.emplace_back('d') -> aucun des deux car renvoie void
+std::move(vec) -> rvalue
